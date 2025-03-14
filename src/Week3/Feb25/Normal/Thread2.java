@@ -4,7 +4,7 @@ public class Thread2 {
 
     public void run() {
         while(true) {
-            System.out.println("loop 1");
+            System.out.println("loop 2");
             try {
                 Thread.sleep(100);
             }catch(Exception ex) {

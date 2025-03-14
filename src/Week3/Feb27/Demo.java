@@ -4,13 +4,38 @@ public class Demo {
     public static void main(String... args) {
         System.out.println("Main starts");
 
-        Runnable r = () -> { // The code of the method that does not need any argument is this, that method is the run method
-            for(int i = 0; i < 10; i++) {
-                System.out.println("Loop" + i);
-            }    
+        // Runnable r = () -> { // The code of the method that does not need any argument is this, that method is the run method
+        //     for(int i = 0; i < 10; i++) {
+        //         System.out.println("Loop" + i);
+        //     }    
+        // };
+
+        // new Thread(r).start();
+
+        Runnable r1 = () -> {
+            for(int i = 0; i < 100; i++) {
+                System.out.println("Barez");
+                try {
+                    Thread.sleep(500);
+                }catch(Exception ex) {
+
+                }
+            }
         };
 
-        new Thread(r).start();
+        Runnable r2 = () -> {
+            for(int i = 0; i < 100; i++) {
+                System.out.println("Ali");
+                try {
+                    Thread.sleep(500);
+                }catch(Exception ex) {
+                    
+                }
+            }
+        };
+
+        new Thread(r1).start();
+        new Thread(r2).start();
         
 
         System.out.println("Main ends");
