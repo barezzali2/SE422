@@ -37,7 +37,7 @@ public class Test {
 class SharedCounter {
     private int count = 0;
 
-    public synchronized void increment() { // Intrinsic lock: By using the synchronized keyword, at a time, only one thread can run and execute this method
+    public synchronized void increment() { // Intrinsic lock: By using the synchronized keyword, at a time, only one thread can execute this method
         count++; // Now it is thread safe
     }
 
@@ -60,14 +60,16 @@ class SharedCounter {
 // public class Test {
 //     public static void main(String... args) {
 
+//         System.out.println("Start");
+
 //         Thread t1 = new Thread(() -> {
-//             for(int i = 0; i < 1000; i++){
+//             for(int i = 0; i < 100; i++){
 //                 System.out.println("Thread 1");
 //             }
 //         });
         
 //         Thread t2 = new Thread(() -> {
-//             for(int i = 0; i < 1000; i++){
+//             for(int i = 0; i < 100; i++){
 //                 System.out.println("Thread 2");
 //             }
 //         });
@@ -91,11 +93,6 @@ class SharedCounter {
 
 
 
-
-
-
-
-
 // public class Test {
 //     public static void main(String... args) {
 
@@ -103,7 +100,7 @@ class SharedCounter {
 
 //         Thread t1 = new Thread(() -> {
 //             for(int i = 0; i < 10000; i++){
-//                 // System.out.println("Thread 1");
+//                 // System.out.println("Thread 1"); // If I uncomment this, the final value will be 20000 because of the nature of println and having pause and slowing down the loop execution
 //                 counter.increment();
 //             }
 //         });
