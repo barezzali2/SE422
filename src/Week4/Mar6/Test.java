@@ -5,6 +5,7 @@ public class Test {
 
         SharedCounter counter = new SharedCounter();
 
+
         Thread t1 = new Thread(() -> {
             for(int i = 0; i < 10000; i++){
                 // System.out.println("Thread 1");
@@ -21,7 +22,7 @@ public class Test {
 
         t1.start();
         t2.start();
-
+        
         try {
             t1.join(); // Main thread is waiting for t1 to finish
             t2.join(); // Same, Main goes to sleep mode till they end
